@@ -9,6 +9,7 @@ AsteroidsRain heavyRain;
 
 void setup(){
   size(1400,1000);
+  noCursor();
   
   //printArray(Capture.list());
   //webcam = new Capture(this, Capture.list()[1]);
