@@ -3,16 +3,15 @@
 
 Galaxy stars;
 PImage ship;
+AsteroidsRain heavyRain;
 
 
 void setup(){
   size(1400,1000);
   
   stars = new Galaxy(100,5);
-  ship = loadImage("images/ship/falcon.png");
-  
-  
-  
+  ship = loadImage("images/ship/possente.png");
+  heavyRain = new AsteroidsRain();
 }
 
 void draw(){
@@ -21,5 +20,6 @@ void draw(){
   
   stars.move();
   
-  image(ship,0,0);
+  image(ship,mouseX,780);
+  heavyRain.fall();
 }

@@ -27,7 +27,7 @@ class Galaxy{
       galaxy.elementAt(i).show();
     }
     
-    for(int i = 0; i < stars; i++){
+    for(int i = 0; i < galaxy.size(); i++){
       galaxy.elementAt(i).setY(galaxy.elementAt(i).getY() + speed);
       if(galaxy.elementAt(i).getY() > height) galaxy.elementAt(i).setY(random(-height*2,0));
     }
