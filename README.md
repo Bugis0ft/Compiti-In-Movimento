@@ -1,7 +1,7 @@
 # Compiti-In-Movimento
 This repo contains out project in collaboration with I.I.T. of Genoa!
 
-##The Project
+## The Project
 Our idea is to make an hexer-game based on minigames. 
 Every minigames gives you points. 
 > _The more you get, the higher you rank!_
