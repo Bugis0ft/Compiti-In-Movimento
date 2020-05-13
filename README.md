@@ -6,7 +6,7 @@ Our idea is to make an hexer-game based on minigames.
 Every minigames gives you points. 
 > _The more you get, the higher you rank!_
 
-##The Team
+## The Team
 Our team is composed by some 4^Arob students:
 - [Agbonson Gabrizio](https://github.com/orgs/Bugis0ft/people/smilefabri)
 - [Bagnis Gabriele](https://github.com/orgs/Bugis0ft/people/Bagnis-Gabriele)
