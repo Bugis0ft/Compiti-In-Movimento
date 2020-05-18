@@ -1,36 +1,41 @@
  import java.util.Vector;
  import processing.video.*;
+ import processing.sound.*;
 
 Galaxy stars;
-PImage ship;
+AlienAttack aliens;
+Ship ship;
+SoundFile music;
 AsteroidsRain heavyRain;
-//Capture webcam;
 
+ static boolean dead = false;
 
 void setup(){
-  size(1400,1000);
+  size(displayWidth,displayHeight);
   noCursor();
   
-  //printArray(Capture.list());
-  //webcam = new Capture(this, Capture.list()[1]);
-  //webcam.start();
-  
   stars = new Galaxy(100,5);
-  ship = loadImage("images/ship/possente.png");
+  ship = new Ship();
+  music = new SoundFile(this, "sounds/megalovania.mp3");
+  music.amp(0.01);  //setting volume
+  //music.loop();
   heavyRain = new AsteroidsRain();
+
+  aliens = new AlienAttack();
+  aliens.addAlien(1);
 }
 
 void draw(){
-  background(0);
-  //if(webcam.available()){
-  //  webcam.read(); 
-  //}
+  if(!dead){
+    background(0);
   
+    stars.move();
+    
+    ship.show();
+    
+    heavyRain.fall();
+    
+    aliens.attack();
+  }
   
-  
-  
-  //image(webcam,0,0,1400,1000);
-  stars.move();
-  image(ship,mouseX,780);
-  heavyRain.fall();
 }
