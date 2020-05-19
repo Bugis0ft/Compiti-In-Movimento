@@ -18,7 +18,7 @@ void setup(){
   ship = new Ship();
   music = new SoundFile(this, "sounds/megalovania.mp3");
   music.amp(0.01);  //setting volume
-  //music.loop();
+  music.loop();
   heavyRain = new AsteroidsRain();
 
   aliens = new AlienAttack();
