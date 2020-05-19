@@ -3,11 +3,17 @@ class Rick{
   private float x;
   private float y;
   private int mousex=0;
+  private int k;
+  private boolean su;
+  private boolean giu;
 
   public Rick(int x, int y){
     rick = loadImage("source.gif");
     this.x = x;
     this.y = y;
+    k=0;
+    su = true;
+    giu = false;
   }
   
   public Rick(){
@@ -39,20 +45,20 @@ class Rick{
   }
   
   public void jump(){
-    float a=0;
-    boolean fuori=true;
-    while(fuori){
-      a=a+1;
-      setY(a);
-      delay(20);
-      if(a==300){
-        /*
-        while(a>=10){
-          a=a-10;
-          setY(a);
-        }*/
-          fuori=false;
-      }
+    if(su && k<10){
+      k++;
+      y-=15;
+    }else {
+      su = false;
+      giu = true;
+    }
+    
+    if(giu && k>0){
+      k--;
+      y+=15;
+    }else {
+      su = true;
+      giu = false;
     }
   }
 }
