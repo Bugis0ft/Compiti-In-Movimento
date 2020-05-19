@@ -8,7 +8,7 @@ Every minigames gives you points.
 
 ## The Team
 Our team is composed by some 4^Arob students:
-- [Agbonson Fabrizio](https://github.com/orgs/Bugis0ft/people/smilefabri)
+- [Agbonson Fabrizio](https://github.com/orgs/Bugis0ft/people/blackson)
 - [Bagnis Gabriele](https://github.com/orgs/Bugis0ft/people/Bagnis-Gabriele)
 - [Bruno Luca](https://github.com/orgs/Bugis0ft/people/Chestnut1)
 - [Genovese Tommaso](https://github.com/orgs/Bugis0ft/people/TommyGenovese)
