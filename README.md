@@ -25,6 +25,7 @@ Our team is composed by some 4^Arob students:
 
 >Pong
 ![Image of Space Invader](https://github.com/Bugis0ft/Compiti-In-Movimento/blob/master/Ping_pong/documentation/game.jpg)
+
 -[x] Base object
 -[x] Keyboard movement
 -[ ] Sound
