@@ -23,6 +23,15 @@ Our team is composed by some 4^Arob students:
 - [ ] Collision
 - [ ] Points Managment
 
+>Pong
+![Image of Space Invader](https://github.com/Bugis0ft/Compiti-In-Movimento/blob/master/Ping_pong/documentation/game.jpg)
+-[x] Base object
+-[x] Keyboard movement
+-[ ] Sound
+-[ ] Obstacle
+-[ ] Python cv
+
+
 ## Thanks
 Thanks to:
 - __I.I.T. of Genoa__ for providing us OpenPose body tracking algorithm.
