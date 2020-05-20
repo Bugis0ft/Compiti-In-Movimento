@@ -21,7 +21,7 @@ class Mostro{
   }
   
   public void show(){
-    image(mostro, x, y, 100, 50);
+    image(mostro, x, y, 100, 70);
   }
   
    public float getX(){
