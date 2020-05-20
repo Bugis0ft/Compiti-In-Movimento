@@ -1,6 +1,9 @@
 import java.util.Vector;
+import processing.sound.*;
+
   // Declare variable "a" of type PImage
 PImage sfondo;
+SoundFile music;
 Rick rick;
 Basi paddles;
 Mostri mostri;
@@ -12,6 +15,9 @@ void setup() {
   paddles= new Basi();
   rick=new Rick();
   mostri=new Mostri();
+  music = new SoundFile(this, "sigla.mp3");
+  music.amp(0.1);  //setting volume
+  music.loop();
   noCursor();
 }
 
@@ -24,9 +30,7 @@ void draw() {
   rick.show();
   mostri.show();
   mostri.fall();
-  text(rick.getX(),5,40);
-  text(rick.getY(),5,90);
+  text(rick.getY(),5,40);
   textSize(40);
   rick.jump();
-  
 }

@@ -1,5 +1,5 @@
 class Mostri{
-  private int a = parseInt(random(3,10));
+  private int a = parseInt(random(1,3));
   private Vector<Mostro> mostri;
   
   
