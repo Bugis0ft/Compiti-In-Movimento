@@ -19,7 +19,7 @@ class Ship{
   }
   
   public void show(){
-    image(ship,mouseX,780);
+    image(ship,nose_x,780);
     //create a laser tag every second 
     s+=1;
     if(s%35 == 0){
