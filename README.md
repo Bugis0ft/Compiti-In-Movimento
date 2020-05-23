@@ -28,7 +28,7 @@ Our team is composed by some 4^Arob students:
 
 - [x] Base object
 - [x] Punteggi e scritte
-- [x] Keyboard movement
+- [x] OpenPose Implementation
 - [ ] Sound
 - [ ] Obstacle
 - [ ] Python cv
