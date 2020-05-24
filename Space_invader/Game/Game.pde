@@ -53,7 +53,7 @@ void draw(){
       int port = packet.getPort();
       packet = new DatagramPacket(buf, buf.length, address, port);
   
-      nose_x = Float.intBitsToFloat( (buf[0]& 0xFF) ^ (buf[1]& 0xFF)<<8 ^ (buf[2]& 0xFF)<<16 ^ (buf[3]& 0xFF)<<24 );
+      nose_x = Float.intBitsToFloat( (buf[0]& 0xFF) ^ (buf[1]& 0xFF)<<8 ^ (buf[2]& 0xFF)<<16 ^ (buf[3]& 0xFF)<<24 )*2.2;
     }
     catch (IOException e) {
       e.printStackTrace(); 
