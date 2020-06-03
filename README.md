@@ -16,10 +16,11 @@ Our team is composed by some 4^Arob students:
 
 ## Projects Status
 > Space Invader
-![Image of Space Invader](https://github.com/Bugis0ft/Compiti-In-Movimento/blob/master/Space_invader/documentation/d1.png)
+![Image of Space Invader](https://github.com/Bugis0ft/Compiti-In-Movimento/blob/master/Space_invader/documentation/d2.png)
 - [x] Enemies & Asteroids
 - [x] Ship & Shooting
 - [x] Music
+- [x] OpenPose implementation
 - [ ] Collision
 - [ ] Points Managment
 
@@ -27,8 +28,8 @@ Our team is composed by some 4^Arob students:
 ![Image of Space Invader](https://github.com/Bugis0ft/Compiti-In-Movimento/blob/master/Ping_pong/documentation/game.jpg)
 
 - [x] Base object
-- [x] Punteggi e scritte
-- [x] Keyboard movement
+- [x] Points and writings
+- [x] Keyboard movements
 - [ ] Sound
 - [ ] Obstacle
 - [ ] Python cv

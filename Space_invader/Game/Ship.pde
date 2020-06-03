@@ -19,12 +19,12 @@ class Ship{
   }
   
   public void show(){
-    image(ship,mouseX,780);
+    image(ship,nose_x,780);
     //create a laser tag every second 
     s+=1;
-    if(s%35 == 0){
+    if(s%30 == 0){
       s =0;
-      laserTag.add(new LaserTag(mouseX + ship.width/2, this.y-LaserTag.H));
+      laserTag.add(new LaserTag(nose_x + ship.width/2, this.y-LaserTag.H));
     }
     //move all laser tag
     for(int i = 0; i < laserTag.size(); i++){
