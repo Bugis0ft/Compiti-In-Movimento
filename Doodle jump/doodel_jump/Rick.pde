@@ -6,6 +6,7 @@ class Rick{
   private int k;
   private boolean su;
   private boolean giu;
+  private float nasox;
 
   public Rick(int x, int y){
     rick = loadImage("source.gif");
@@ -18,30 +19,28 @@ class Rick{
   
   public Rick(){
     rick = loadImage("source.gif");
-    this.x = mouseX;
+    this.x = nose_x;
     this.y = 720-100;
   }
   
   public void show(){
     
-    if(mouseX>1280-150){
-      mousex=1280-150;
-    }else{
-      mousex=mouseX;
-    }
-    image(rick, mousex, y, 150, 100); 
+   // if(nose_x>1280-150){
+   //   nose_x=nose_x-150;
+   // }
+    image(rick,nose_x-1280, nose_y, 150, 100); 
   }
   
   public void setY(float a){
     this.y=620-a;
   }
   
-  public int getX(){
-    return mousex;
+  public float getX(){
+    return x;
   }
   
   public int getY(){
-    return parseInt(y);
+    return parseInt(nose_y);
   }
   
   public void jump(){
