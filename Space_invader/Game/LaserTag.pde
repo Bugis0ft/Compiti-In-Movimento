@@ -9,7 +9,7 @@ class LaserTag{
   
   public LaserTag(float x, float y){
     this.fill = color(255,255,255);
-    this.stroke = color(255,255,255);
+    this.stroke = color(51, 255, 235);
     this.x = x;
     this.y = y;
   }
