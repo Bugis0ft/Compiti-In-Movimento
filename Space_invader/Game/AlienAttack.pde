@@ -79,16 +79,16 @@ class AlienAttack{
     return this.aliens;
   }
   
-  public void hit(int i){
+  public void hit(int i){  //decrement life of hitted alien
     aliens.elementAt(i).decLife();
   }
   
   public void checkLife(){
     for(int i = 0; i < aliens.size(); i++){
-      if(aliens.elementAt(i).getLife() == 0){  //alien killed
+      if(aliens.elementAt(i).getLife() == 0){  //if alien killed add points
         Game.killed +=1;
         
-        switch(aliens.elementAt(i).getLvl()){
+        switch(aliens.elementAt(i).getLvl()){  //cehck alien lvl
           case 1:
             score.addPoints(100);
             break;

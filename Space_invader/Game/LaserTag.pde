@@ -7,9 +7,9 @@ class LaserTag{
   private static final int W = 5;
   private static final float speed = 10;  //speed of laser tag
   
-  public LaserTag(float x, float y){
-    this.fill = color(255,255,255);
-    this.stroke = color(51, 255, 235);
+  public LaserTag(float x, float y, color fill, color stroke){
+    this.fill = fill;
+    this.stroke = stroke;
     this.x = x;
     this.y = y;
   }

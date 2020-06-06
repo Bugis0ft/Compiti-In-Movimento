@@ -19,9 +19,9 @@ class Ship{
     image(ship,-(nose_x-1500),780);
     //create a laser tag every second 
     s+=1;
-    if(s%30 == 0){
+    if(s%29 == 0){
       s =0;
-      laserTag.add(new LaserTag(-(nose_x-1500) + ship.width/2, this.y-LaserTag.H));
+      laserTag.add(new LaserTag(-(nose_x-1500) + ship.width/2, this.y-LaserTag.H, color(255,255,255), color(255,255,255)));
     }
     //move all laser tag
     for(int i = 0; i < laserTag.size(); i++){

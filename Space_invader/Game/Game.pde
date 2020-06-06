@@ -17,7 +17,7 @@ static boolean dead = false;
 static int killed = 0;
 int s = 0;
 int s2 = 0;
-int f = 0;
+int startDelay = 0;
 
 DatagramSocket socket;
 DatagramPacket packet;
@@ -54,11 +54,11 @@ void setup(){
   
   //font
   font_scoreboard = createFont("font/punteggio.ttf", 80);
-  
   score = new Points();
 }
 
 void draw(){
+  startDelay++;
   
   if(!dead){
     
@@ -79,24 +79,22 @@ void draw(){
       println(e.getMessage());
     }
     
-    if(f == 0){
-      delay(5000);
-      f = 1;
-    }
-    
     
     //let the game move
     background(0);
     stars.move();
     ship.show();
-    heavyRain.fall();
-    aliens.attack();
-    checkCollision();
+    if(startDelay > 200){  //start obstacles after some times
+      heavyRain.fall();
+      aliens.attack();
+      checkCollision();
+    }
+    
     
     //show score
     textFont(font_scoreboard);
+    fill(255,255,255);
     score.show(width/2-(200),height - 50);
-    
   }
   
 }
@@ -110,15 +108,15 @@ void checkCollision(){
   if(enemies.size() > 0){  //check collision only if aliens exist
     for(int e = 0; e < enemies.size(); e++){
       for(int t = 0; t < tags.size(); t++){
-        if(tags.elementAt(t).getX()>= enemies.elementAt(e).getX() && tags.elementAt(t).getX()<= enemies.elementAt(e).getX()+356 && tags.elementAt(t).getY()<= (enemies.elementAt(e).getY()+50)){
-          hitted.add(e);
+        if(tags.elementAt(t).getX()>= enemies.elementAt(e).getX() && tags.elementAt(t).getX()<= (enemies.elementAt(e).getX()+356*0.3) && tags.elementAt(t).getY()<= (enemies.elementAt(e).getY()+256/3)){
+          hitted.add(e);  //save all hitted aliens
           tags.elementAt(t).setY(-100);
           println("ALIEN HIT");
         }
       }
     }
     s2 = s;
-  }else{  //create more aliens based on player kills
+  }else{  //if all enemies are dead create more aliens based on player kills
     
     if(s > s2+120){
       aliens.addAlien(killed);
@@ -128,11 +126,8 @@ void checkCollision(){
     
   }
   
-  for(int i : hitted){
+  for(int i : hitted){  //subtract one life point to every hitted alien
     aliens.hit(i);
   }
-  aliens.checkLife();
-  
-  
-  
+  aliens.checkLife();  //if life == 0 delete alien
 }
