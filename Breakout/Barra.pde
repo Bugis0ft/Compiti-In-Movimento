@@ -12,12 +12,13 @@ public class Barra{
     w=width/5;
     h=height/40;
     //posizioni iniziali
-    x=width/2 - w/2;
+    x=-(nose_x - 1500);
     y=height-(h*3);
     Speed=15;
   }
   
   public void show(){
+    this.x = -(nose_x - 1500);
     //disegno la barra
     stroke(255, 255, 255);
     fill(255, 255, 255);

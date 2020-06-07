@@ -1,6 +1,8 @@
 import java.util.Vector;
 import java.lang.Math;
 import processing.sound.*;
+import java.net.*;
+import java.io.*;
 
 Palla palla; 
 Palla palla2; 
@@ -9,6 +11,14 @@ Barra barra;
 Punti punteggio; 
 
 int esegui;
+
+//dati socket
+DatagramSocket socket;
+DatagramPacket packet;
+static float nose_x;
+float diam = 40;
+float rectSize = 200;
+byte[] buf = new byte[24]; //Set your buffer size as desired
 
 //caselle
 Vector<Casella> caselle= new Vector<Casella>();
@@ -26,7 +36,20 @@ PFont font_scoreboard;
 PFont font_fine;
 int dimtxt;
 
+//loading time
+int t = 0;
+
 void setup() {
+  
+  //connection to the sokcet
+  try {
+    socket = new DatagramSocket(4124); // Set your port here
+  }
+  catch (Exception e) {
+    e.printStackTrace(); 
+    println(e.getMessage());
+  }
+  
   //imposto la dimensione dello schermo
   fullScreen();
   //imposto lo sfondo
@@ -56,14 +79,35 @@ void setup() {
 }
 
 void draw() {
+  if(t<480) t++;
   if(esegui==1){
+    
+    //get nose x coord
+    try {
+      DatagramPacket packet = new DatagramPacket(buf, buf.length);
+      socket.receive(packet);
+      InetAddress address = packet.getAddress();
+      int port = packet.getPort();
+      packet = new DatagramPacket(buf, buf.length, address, port);
+  
+      nose_x = Float.intBitsToFloat( (buf[0]& 0xFF) ^ (buf[1]& 0xFF)<<8 ^ (buf[2]& 0xFF)<<16 ^ (buf[3]& 0xFF)<<24 )*2.2;
+      //println(nose_x);
+    }
+    catch (IOException e) {
+      e.printStackTrace(); 
+      println(e.getMessage());
+    }
+    
     //imposto lo sfondo
     background(sfondo);
     //aggiorno la posizione della pallina
-    palla.aggiorna();
-    if(punteggio.getPoints()>=200){
-      palla2.aggiorna();
+    if(t>=480){
+      palla.aggiorna();
+      if(punteggio.getPoints()>=200){
+        palla2.aggiorna();
+      }
     }
+    
     //mostro i vari componenti
     fill(255,255,255);
     textFont(font_scoreboard);
