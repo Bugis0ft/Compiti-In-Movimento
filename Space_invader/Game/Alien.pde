@@ -104,6 +104,10 @@ class Alien{
     }
   }
   
+  public Vector<LaserTag> getAlienTags(){
+    return this.laserTag;
+  }
+  
   public int getLvl(){
     return this.lvl;
   }

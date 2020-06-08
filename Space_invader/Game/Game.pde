@@ -101,10 +101,13 @@ void draw(){
 
 void checkCollision(){
   s+=1;
-  //ALIEN-LASER COLLISONS
+  
   Vector<Alien> enemies = aliens.getAliens();
   Vector<LaserTag> tags = ship.getTags();
-  Vector<Integer> hitted = new Vector<Integer>();
+  Vector<LaserTag> alienTags;
+  Vector<Integer> hitted = new Vector<Integer>();  //save index of hitted aliens
+  
+  //-------------------ALIEN - SHIPLASER COLLISONS------------------------
   if(enemies.size() > 0){  //check collision only if aliens exist
     for(int e = 0; e < enemies.size(); e++){
       for(int t = 0; t < tags.size(); t++){
@@ -130,4 +133,13 @@ void checkCollision(){
     aliens.hit(i);
   }
   aliens.checkLife();  //if life == 0 delete alien
+  
+  
+  //-------------------ALIENLASER - SHIP COLLISONS------------------------
+  for(int i = 0; i < enemies.size(); i++){
+    alienTags = enemies.elementAt(i).getAlienTags();
+    
+    
+  }
+  
 }

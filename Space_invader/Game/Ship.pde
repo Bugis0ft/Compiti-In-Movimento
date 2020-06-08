@@ -17,6 +17,8 @@ class Ship{
   
   public void show(){
     image(ship,-(nose_x-1500),780);
+    stroke(255,255,255);
+    rect(-(nose_x-1500),780, ship.width, ship.height);
     //create a laser tag every second 
     s+=1;
     if(s%29 == 0){
