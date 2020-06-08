@@ -23,7 +23,7 @@ class Pipes{
     
     for(int i = 0; i < pipes.size(); i++){
       pipes.elementAt(i).setX(pipes.elementAt(i).getX() - pipes.elementAt(i).getSpeed());
-      if(pipes.elementAt(i).getX() < 0-326) {
+      if(pipes.elementAt(i).getX() < 0-181) {
         pipes.add(new Base(pipes.elementAt(pipes.size()-1).getX()+900));
         pipes.remove(i);
         Flappy_bird.score.addPoints(100);

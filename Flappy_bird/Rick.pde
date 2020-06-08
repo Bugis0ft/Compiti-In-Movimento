@@ -5,11 +5,13 @@ class Rick{
   
   public Rick(){
     this.rick=loadImage("rick2.png");
-    this.x=width/2;
+    this.x=150;
     this.y=height;
   }
   public void show(){
-    image(rick,width/2,nose_y);
+    image(rick,x,nose_y,100,150);
+    fill(255,0,0);
+    circle(150,nose_y,10);
   }
   
   public float getX(){

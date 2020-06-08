@@ -3,18 +3,17 @@ import processing.sound.*;
 import java.net.*;
 import java.io.*;
 
+DatagramSocket socket;
+DatagramPacket packet;
 PFont font_scoreboard;
 static Points score;
 PImage sfondo;
 SoundFile music;
+SoundFile music_dead;
 Rick rick;
 Pipes pipes;
 
 static boolean dead = false;
-
-DatagramSocket socket;
-DatagramPacket packet;
-
 static float nose_y;
 
 byte[] buf = new byte[24]; //Set your buffer size as desired
@@ -28,14 +27,18 @@ void setup(){
     e.printStackTrace(); 
     println(e.getMessage());
   }
-  size(1920,displayHeight);
+  size(1920,1080);
   noCursor();
   sfondo = loadImage("sfondo.png");
+  
   rick=new Rick();
   pipes= new Pipes();
+  /*
   music = new SoundFile(this, "sigla.mp3");
-  music.amp(0.01);
+  music_dead = new SoundFile(this, "dead.mp3");
+  music.amp(0.05);
   music.loop();
+  */
   font_scoreboard = createFont("punteggio.ttf", 80);
   score = new Points();
 }
@@ -64,17 +67,25 @@ void draw(){
 
     textFont(font_scoreboard);
     fill(255,255,255);
-    score.show(width/2-(200),height - 100);
+    score.show(width/2-200,height - 100);
   }
 }
 
 void collision(){
   Vector<Base> pips= pipes.getV();
   for(int i=0;i<pips.size();i++){
-     if(rick.getY()<=pips.elementAt(i).getY()+766 || rick.getY()+150>=pips.elementAt(i).getY()+766+200){
-      if(rick.getX()+200==pips.elementAt(i).getX()){
-        dead=true;
-        score.dead(width/2,height/2);
+     if(rick.getY()<=pips.elementAt(i).getY()+700 || rick.getY()+150>=pips.elementAt(i).getY()+700+200){
+       println(rick.getY());
+       println(pips.elementAt(i).getY()+700);
+       if(rick.getX()+60>=pips.elementAt(i).getX() && rick.getX()+100<=pips.elementAt(i).getX()+181){
+         dead=true;
+         /*
+         music.stop();
+         music_dead.amp(0.5);
+         music_dead.play();
+         music_dead.jump(36);
+         */
+         score.dead(width/2-200,height/2);
       }
     }
   }
