@@ -71,7 +71,7 @@ void draw(){
 void collision(){
   Vector<Base> pips= pipes.getV();
   for(int i=0;i<pips.size();i++){
-    if(rick.getY()<=pips.elementAt(i).getY()+766 || rick.getY()+150>=pips.elementAt(i).getY()+766+200){
+    if(rick.getY()<=pips.elementAt(i).getY()-766 || rick.getY()+150>=pips.elementAt(i).getY()+766+200){
       if(rick.getX()+200==pips.elementAt(i).getX()){
         dead=true;
         score.dead(width/2,height/2);
