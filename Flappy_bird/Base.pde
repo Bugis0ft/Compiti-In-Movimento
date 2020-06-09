@@ -24,8 +24,10 @@ class Base{
   }
   
   public void show(){
-    image(base, x, y,326,766);
-    image(base2, x,y+base.height+200, 326,766);
+    image(base, x, y);
+    image(base2, x,y+base.height+200);
+    fill(255,0,0);
+    circle(x,y+base.height+200,10);
   }
   
    public float getX(){
