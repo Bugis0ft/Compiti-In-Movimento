@@ -12,7 +12,7 @@ SoundFile music;
 SoundFile music_dead;
 Rick rick;
 Pipes pipes;
-
+int startDelay = 0;
 static boolean dead = false;
 static float nose_y;
 
@@ -33,17 +33,16 @@ void setup(){
   
   rick=new Rick();
   pipes= new Pipes();
-  /*
   music = new SoundFile(this, "sigla.mp3");
   music_dead = new SoundFile(this, "dead.mp3");
   music.amp(0.05);
   music.loop();
-  */
   font_scoreboard = createFont("punteggio.ttf", 80);
   score = new Points();
 }
 
 void draw(){
+  startDelay++;
   if(!dead){
     try {
       DatagramPacket packet = new DatagramPacket(buf, buf.length);
@@ -62,9 +61,10 @@ void draw(){
 
     image(sfondo, 0, 0, width, height);  
     rick.show();
-    pipes.fall();
-    collision();
-
+    if(startDelay > 400){
+      pipes.fall();
+      collision();
+    }
     textFont(font_scoreboard);
     fill(255,255,255);
     score.show(width/2-200,height - 100);
@@ -79,12 +79,10 @@ void collision(){
        println(pips.elementAt(i).getY()+700);
        if(rick.getX()+60>=pips.elementAt(i).getX() && rick.getX()+100<=pips.elementAt(i).getX()+181){
          dead=true;
-         /*
          music.stop();
          music_dead.amp(0.5);
          music_dead.play();
          music_dead.jump(36);
-         */
          score.dead(width/2-200,height/2);
       }
     }
