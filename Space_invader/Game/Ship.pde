@@ -4,21 +4,22 @@ class Ship{
   PImage ship;
   private Vector<LaserTag> laserTag;
   
-
   
 
   public Ship(){
     this.ship = loadImage("images/ship/possente.png");
-    this.y = 780;
+    this.y = height-190;
     laserTag = new Vector<LaserTag>();
     s = 0;
 
   }
   
   public void show(){
-    image(ship,-(nose_x-1500),780);
-    stroke(255,255,255);
-    rect(-(nose_x-1500),780, ship.width, ship.height);
+    image(ship,-(nose_x-1500),y);
+    //fill(0,0,0,0);
+    //stroke(255,255,255);
+    //rect(-(nose_x-1500),780+ship.height/2, ship.width, ship.height/2);  //wings
+    //rect(-(nose_x-1500)+65,780,ship.width-130,ship.height);  //main ship
     //create a laser tag every second 
     s+=1;
     if(s%29 == 0){
@@ -45,6 +46,14 @@ class Ship{
   
   public float getY(){
     return this.y;
+  }
+  
+  public float getW(){
+    return ship.width;
+  }
+  
+  public float getH(){
+    return ship.height;
   }
   
   public Vector<LaserTag> getTags(){

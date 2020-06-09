@@ -25,6 +25,9 @@ class Asteroid{
   
   public void show(){
     image(asteroid, x, y, asteroid.width/scale, asteroid.height/scale);
+    stroke(255,0,0);
+    fill(0,0,0,0);
+    rect(x+30/scale, y+30/scale,(asteroid.width/scale)-60/scale,(asteroid.height/scale)-60/scale);
   }
   
    public float getX(){
@@ -45,5 +48,14 @@ class Asteroid{
   
   public void setY(float y){
     this.y = y;
+  }
+  
+  public Vector<Float> getBorders(){  //return corners coords
+    Vector<Float> borders = new Vector<Float>();
+    borders.add(x+30/scale);
+    borders.add(y+30/scale);
+    borders.add(x+30/scale + (asteroid.width/scale)-60/scale);
+    borders.add(y+30/scale + (asteroid.height/scale)-60/scale);
+    return borders;
   }
 }

@@ -77,7 +77,7 @@ class Alien{
   public void show(){
     //draw alien and its hitbox
     fill(0,0,0,0);
-    rect(x,y, alien.width*scale, alien.height*scale);  
+    //rect(x,y, alien.width*scale, alien.height*scale);  
     image(alien, x, y, alien.width*scale, alien.height*scale);
     
     //create a laser tag every tot seconds

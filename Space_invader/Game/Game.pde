@@ -10,7 +10,9 @@ static Points score;
 Galaxy stars;
 AlienAttack aliens;
 Ship ship;
+SoundFile pew;
 SoundFile music;
+SoundFile gameover;
 AsteroidsRain heavyRain;
 
 static boolean dead = false;
@@ -18,6 +20,7 @@ static int killed = 0;
 int s = 0;
 int s2 = 0;
 int startDelay = 0;
+int soundDelay = 429;
 
 DatagramSocket socket;
 DatagramPacket packet;
@@ -39,11 +42,14 @@ void setup(){
   }
   size(displayWidth,displayHeight);
   noCursor();
-  /*music settings
+  //music settings
   music = new SoundFile(this, "sounds/megalovania.mp3");
+  gameover = new SoundFile(this,"sounds/error.wav");
+  pew = new SoundFile(this,"sounds/pew.wav");
   music.amp(0.01);
+  pew.amp(0.1);
+  gameover.amp(0.1);
   music.loop();
-  */
   
   //objects instances
   stars = new Galaxy(100,5);
@@ -54,6 +60,7 @@ void setup(){
   
   //font
   font_scoreboard = createFont("font/punteggio.ttf", 80);
+  
   score = new Points();
 }
 
@@ -84,17 +91,27 @@ void draw(){
     background(0);
     stars.move();
     ship.show();
-    if(startDelay > 200){  //start obstacles after some times
+    if(startDelay >+ 400){  //start obstacles after some times
       heavyRain.fall();
       aliens.attack();
       checkCollision();
+    }
+    
+    //play pew sounf syncronized with ship shooting
+    if(startDelay == soundDelay){
+      startDelay = 400;
+      pew.play();
     }
     
     
     //show score
     textFont(font_scoreboard);
     fill(255,255,255);
-    score.show(width/2-(200),height - 50);
+    score.show(width/2-(200),200);
+  }else{
+    music.stop();
+    fill(255,0,0);
+    text("GAME OVER",width/2-200,height/2);
   }
   
 }
@@ -105,6 +122,8 @@ void checkCollision(){
   Vector<Alien> enemies = aliens.getAliens();
   Vector<LaserTag> tags = ship.getTags();
   Vector<LaserTag> alienTags;
+  Vector<Asteroid> asteroids = heavyRain.getAsteroids();
+  Vector<Float> asteroidBorders;
   Vector<Integer> hitted = new Vector<Integer>();  //save index of hitted aliens
   
   //-------------------ALIEN - SHIPLASER COLLISONS------------------------
@@ -139,7 +158,39 @@ void checkCollision(){
   for(int i = 0; i < enemies.size(); i++){
     alienTags = enemies.elementAt(i).getAlienTags();
     
-    
+    for(int t = 0; t < alienTags.size(); t++){
+                                                                                //rect(-(nose_x-1500),780+ship.height/2, ship.width, ship.height/2);  //wings
+                                                                                //rect(-(nose_x-1500)+65,780,ship.width-130,ship.height);  //main ship
+      if((alienTags.elementAt(t).getX() + LaserTag.W >= ship.getX() && alienTags.elementAt(t).getX() - LaserTag.W <= ship.getX() + ship.getW())    &&    (((alienTags.elementAt(t).getX()+LaserTag.W <= ship.getX()+65 || alienTags.elementAt(t).getX()+LaserTag.W >= ship.getX()+ship.getW()-130) && (alienTags.elementAt(t).getY()+LaserTag.H>=ship.getY() + ship.getH()/2 && alienTags.elementAt(t).getY()<=ship.getY()+ship.getH()))    ||    (((alienTags.elementAt(t).getX()+LaserTag.W > ship.getX()+65 && alienTags.elementAt(t).getX()+LaserTag.W < ship.getX()+ship.getW()-130) && alienTags.elementAt(t).getY()+LaserTag.H>=ship.getY())))){
+        println("dead");
+        dead = true;
+        gameover.play();
+      }
+                                                                                
+    }
   }
   
+  //-------------------AASTEROID-SHIP COLLISONS------------------------
+  for(int a = 0; a < asteroids.size(); a++){
+    //get border coords
+    asteroidBorders = asteroids.elementAt(a).getBorders();  //return a Vector<Float> = [top_left_x, top_left_y,bottom_right_x,bottom_right_y]
+    
+    if(asteroidBorders.elementAt(3) >= ship.getY()){  //check collision only if asteroids in under ship y coord
+      if(((asteroidBorders.elementAt(0)>=ship.getX()+65 && asteroidBorders.elementAt(0)<=ship.getX()+ship.getW()-130) || (asteroidBorders.elementAt(2)>=ship.getX()+65 && asteroidBorders.elementAt(2)<=ship.getX()+ship.getW()-130) || (asteroidBorders.elementAt(0)<=ship.getX()+65 && asteroidBorders.elementAt(2)>=ship.getX()+ship.getW()-130)) && asteroidBorders.elementAt(1)<=ship.getX()+ship.getH()){
+        dead = true;
+        gameover.play();
+        println("morto corpo prinicplae");
+      }
+    }
+    
+    if(asteroidBorders.elementAt(3) >= ship.getY()+ship.getH()/2){  //check collision only if asteroids in under half ship y coord
+      if(((asteroidBorders.elementAt(0)>=ship.getX()+ship.getW()-130 && asteroidBorders.elementAt(0)<= ship.getX()+ship.getW()) || (asteroidBorders.elementAt(2)<=ship.getX()+65 && asteroidBorders.elementAt(2)>= ship.getX())) && asteroidBorders.elementAt(1)<=ship.getX()+ship.getH() ){
+        dead = true;
+        println("morto ala");
+        println("ship: " + ship.getX() + " " + (ship.getX()+ship.getW()) + " " + (ship.getX()+65) + " " + (ship.getX()+ship.getW()-130));
+        println("asteroids: " + asteroidBorders);
+        gameover.play();
+      }
+    }
+  }
 }

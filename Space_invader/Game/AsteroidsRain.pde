@@ -31,4 +31,8 @@ class AsteroidsRain{
       }
     }
   }
+  
+  public Vector<Asteroid> getAsteroids(){
+    return this.asteroidRain;
+  }
 }

@@ -120,7 +120,7 @@ void draw() {
     }
     palla.show();
     barra.show();
-    barra.moveMouse();
+    //barra.moveMouse();
     if(punteggio.getPoints()>=200){
       palla2.show();
       barra.scontro(palla2);
