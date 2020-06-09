@@ -6,18 +6,20 @@ DatagramSocket socket;
 DatagramPacket packet;
 
 
-float nose_y;
+
 
 
 byte[] buf = new byte[24];
 
+PImage immagine;
 boolean winner;
 int max_score;
- Player player1 ;
- Player player2 ;
- Ostacolo ostac;
- Palla palla; 
- PImage immagine;
+Player player1 ;
+Player player2 ;
+Ostacolo ostac;
+Palla palla; 
+float nose_y;
+
 void setup() {
   size(1000,800);
   immagine = loadImage("bugisoft.jpg");

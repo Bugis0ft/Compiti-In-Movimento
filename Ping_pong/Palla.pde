@@ -1,8 +1,24 @@
+/*
+
+author : fabrizio agbonson,tommaso genovose 
+date: 1 june 2020
+descrizione: classe dove definisco l'oggetto Palla, che farà comparire a video un cerchio  che sarà la palla con cui i giocatori 
+giocheranno 
+
+
+
+*/
+
+
+
+
 class Palla {
+   // dichiaro la variabili
   private PVector posizione, velocita;
   private int altPlayer, largPlayer;
-  
+  //costruttore
   public Palla(int direzione) {
+    
     this.largPlayer = 20;
     this.altPlayer  = 100;
     
@@ -33,13 +49,13 @@ class Palla {
     }
   }
   
- 
+ //mostra a video la palla
   void show() {
     fill(2555,255,0);
     stroke(0, 0, 0);
     ellipse(posizione.x, posizione.y, 20,20);
   }
-  
+  //serve per calcolare la direzione di movimento quando la palla rimbalza sul player
   void RimbalzoPlayer(PVector posizionePlayer) {
 
     float min = posizionePlayer.y - this.altPlayer/2;
@@ -52,7 +68,7 @@ class Palla {
       this.velocita.x *= -1;
     }
   }
-  
+  //serve per calcolare la direzione di movimento quando la palla rimbalza sul player2
   void RimbalzoPlayer2(PVector posizionePlayer) {
 
     float min = posizionePlayer.y - this.altPlayer/2;
@@ -63,6 +79,7 @@ class Palla {
       this.velocita.x *= -1;
     }
   }
+  //serve per calcolare la direzione in cui  la palla andra quando giocherà 
   
   void MuroRimbalzo() {
 
@@ -73,7 +90,11 @@ class Palla {
     }
   }
   
+  //get
+
   PVector getPosizione() {
     return this.posizione;
   }
+
+
 }

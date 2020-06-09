@@ -1,3 +1,16 @@
+/*
+
+author : fabrizio agbonson,tommaso genovose 
+date: 1 june 2020
+descrizione: classe dove definisco l'oggetto Ostacolo
+
+
+
+
+*/
+//classe Ostacolo
+
+
 class Ostacolo{
   private int cont =0;
   private int R= 100;

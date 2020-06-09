@@ -1,7 +1,21 @@
+/*
+
+author : fabrizio agbonson,tommaso genovose 
+date: 1 june 2020
+descrizione: classe dove definisco l'oggetto giocatore
+
+
+
+*/
+//classe Player
+
+
 class Player{
+  // dichiaro la variabili
   private PVector posizione, velocita;
   private int larg, alt, NPlayer, punti;
   
+  //costruttore
   public Player(int np) {
     this.NPlayer = np;
     this.larg = 20; 
@@ -16,7 +30,7 @@ class Player{
     this.velocita = new PVector(0,20);
   }
   
-
+  //metodo per  "simulare" il movimento del giocatore 
   void move(float nose_y) {
     
     
@@ -54,6 +68,7 @@ class Player{
     
   }
   
+  //metodo per far disegnare il giocatore in video
   void show() {
     fill(255);
     noStroke();
@@ -61,6 +76,9 @@ class Player{
     rect(this.posizione.x, this.posizione.y, this.larg, this.alt);
   }
   
+
+
+  //get e set
   PVector getPosizione() {
     return this.posizione;
   }
