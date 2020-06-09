@@ -13,11 +13,23 @@ class Player{
     } else if(NPlayer == 2) {
        this.posizione = new PVector(width - larg/2, height/2);
     }
-    this.velocita = new PVector(0,5);
+    this.velocita = new PVector(0,20);
   }
   
 
-  void move() {
+  void move(float nose_y) {
+    
+    
+    
+    if(nose_y != 0){
+    if (this.NPlayer == 1 && nose_y < 350 ){
+      this.posizione.sub(this.velocita);
+    }else if( this.NPlayer == 1 && nose_y > 350){
+      this.posizione.add(this.velocita);
+    }
+    this.posizione.y = constrain(this.posizione.y,this.alt/2,height - this.alt/2);
+    }
+   /* 
    if(keyPressed){
      if(this.NPlayer == 2 && key == 'w') {
        this.posizione.sub(this.velocita);
@@ -38,6 +50,7 @@ class Player{
       this.posizione.add(this.velocita);
     }
     this.posizione.y = constrain(this.posizione.y,this.alt/2,height - this.alt/2);
+    */
     
   }
   

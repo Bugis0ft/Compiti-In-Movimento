@@ -9,13 +9,28 @@ class Palla {
     
     posizione = new PVector(width/2, height/2);
     
-    this.velocita = new PVector(direzione*random(4,5), random(4,5));
+    this.velocita = new PVector(direzione*random(15,16), random(15,16));
   }
   
   
   
   void mover() {
     posizione.add(velocita);
+  }
+  
+  
+  
+  void Risucchio(){
+    if(this.posizione.y > 250 && this.posizione.y < 390 && this.posizione.x >430 && this.posizione.x < 570 ) {
+      if(this.posizione.x >= 500){
+        posizione = new PVector(620, 320);
+        this.velocita= new PVector(1*random(15,16), random(15,16));
+      }
+      if(this.posizione.x < 500){
+        posizione = new PVector(380, 320);
+        this.velocita= new PVector(1*random(-15,-16), random(-15,-16));
+      }
+    }
   }
   
  
