@@ -17,12 +17,15 @@ Our team is composed by some 4^Arob students:
 ## Projects Status
 > Breakout
 ![Image of Breakout](https://github.com/Bugis0ft/Compiti-In-Movimento/blob/master/Breakout/presentation/image.png)
-- [x] bounce of the ball
-- [x] destruction of the blocks
+- [x] Bounce of the ball
+- [x] Destruction of the blocks
 - [x] Music
+- [x] Score
 - [x] OpenPose implementation
+
 > Space Invader
 ![Image of Space Invader](https://github.com/Bugis0ft/Compiti-In-Movimento/blob/master/Space_invader/documentation/d2.png)
+
 - [x] Enemies & Asteroids
 - [x] Ship & Shooting
 - [x] Music
@@ -31,7 +34,7 @@ Our team is composed by some 4^Arob students:
 - [ ] Points Managment
 
 >Pong
-![Image of Space Invader](https://github.com/Bugis0ft/Compiti-In-Movimento/blob/master/Ping_pong/documentation/game.jpg)
+![Image of Pong](https://github.com/Bugis0ft/Compiti-In-Movimento/blob/master/Ping_pong/documentation/game.jpg)
 
 - [x] Base object
 - [x] Points and writings
