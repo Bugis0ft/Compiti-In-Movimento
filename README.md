@@ -15,6 +15,12 @@ Our team is composed by some 4^Arob students:
 - [Giavelli Luca](https://github.com/orgs/Bugis0ft/people/LGiave)
 
 ## Projects Status
+> Breakout
+![Image of Breakout](https://github.com/Bugis0ft/Compiti-In-Movimento/blob/master/Breakout/presentation/image.png)
+- [x] bounce of the ball
+- [x] destruction of the blocks
+- [x] Music
+- [x] OpenPose implementation
 > Space Invader
 ![Image of Space Invader](https://github.com/Bugis0ft/Compiti-In-Movimento/blob/master/Space_invader/documentation/d2.png)
 - [x] Enemies & Asteroids
