@@ -62,4 +62,5 @@ public class Barra{
   public void moveMouse(){
       x=mouseX;
   }
+  
 }

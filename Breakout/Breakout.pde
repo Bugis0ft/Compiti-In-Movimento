@@ -188,6 +188,7 @@ void disegnaCaselle() {
       caselle.remove(blocco);
     }
   }
+  
 }
 
 void mousePressed(){

@@ -15,24 +15,33 @@ Our team is composed by some 4^Arob students:
 - [Giavelli Luca](https://github.com/orgs/Bugis0ft/people/LGiave)
 
 ## Projects Status
+> Breakout
+![Image of Breakout](https://github.com/Bugis0ft/Compiti-In-Movimento/blob/master/Breakout/presentation/image.png)
+- [x] Bounce of the ball
+- [x] Destruction of the blocks
+- [x] Music
+- [x] Score
+- [x] OpenPose implementation
+
 > Space Invader
 ![Image of Space Invader](https://github.com/Bugis0ft/Compiti-In-Movimento/blob/master/Space_invader/documentation/d2.png)
+
 - [x] Enemies & Asteroids
 - [x] Ship & Shooting
 - [x] Music
 - [x] OpenPose implementation
-- [ ] Collision
-- [ ] Points Managment
+- [x] Collision
+- [x] Points Managment
 
 >Pong
-![Image of Space Invader](https://github.com/Bugis0ft/Compiti-In-Movimento/blob/master/Ping_pong/documentation/game.jpg)
+![Image of Pong](https://github.com/Bugis0ft/Compiti-In-Movimento/blob/master/Ping_pong/documentation/game.jpg)
 
 - [x] Base object
 - [x] Points and writings
 - [x] Keyboard movements
-- [ ] Sound
-- [ ] Obstacle
-- [ ] Python cv
+- [x] Sound
+- [x] Obstacle
+- [x] openpose
 
 
 ## Thanks
