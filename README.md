@@ -15,7 +15,7 @@ Our team is composed by some 4^Arob students:
 - [Giavelli Luca](https://github.com/orgs/Bugis0ft/people/LGiave)
 
 ## Projects Status
-> Breakout
+> Breakout, by Bagnis Gabriele
 ![Image of Breakout](https://github.com/Bugis0ft/Compiti-In-Movimento/blob/master/Breakout/presentation/image.png)
 - [x] Bounce of the ball
 - [x] Destruction of the blocks
@@ -23,7 +23,7 @@ Our team is composed by some 4^Arob students:
 - [x] Score
 - [x] OpenPose implementation
 
-> Space Invader
+> Space Invader, by Bruno Luca
 ![Image of Space Invader](https://github.com/Bugis0ft/Compiti-In-Movimento/blob/master/Space_invader/documentation/d2.png)
 
 - [x] Enemies & Asteroids
@@ -33,7 +33,7 @@ Our team is composed by some 4^Arob students:
 - [x] Collision
 - [x] Points Managment
 
->Pong
+>Pong, by Genovese Tommaso & Agbonson Fabrizio
 ![Image of Pong](Ping_pong_processing/documentation/demo.png)
 
 - [x] Base object
@@ -43,7 +43,7 @@ Our team is composed by some 4^Arob students:
 - [x] openpose
 - [ ] Sound
 
->Flappy Rick
+>Flappy Rick, by Giavelli Luca
 ![Image of Pong](https://github.com/Bugis0ft/Compiti-In-Movimento/blob/master/Flappy_Bird/Flappy_Rick.PNG)
 
 - [x] Base object
