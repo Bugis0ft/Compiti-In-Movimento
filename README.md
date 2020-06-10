@@ -39,9 +39,9 @@ Our team is composed by some 4^Arob students:
 - [x] Base object
 - [x] Points and writings
 - [x] Keyboard movements
-- [ ] Sound
 - [x] Obstacle
 - [x] openpose
+- [ ] Sound
 
 >Flappy Rick
 ![Image of Pong](https://github.com/Bugis0ft/Compiti-In-Movimento/blob/master/Flappy_Bird/Flappy_Rick.PNG)
