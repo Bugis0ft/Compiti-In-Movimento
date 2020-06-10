@@ -43,6 +43,15 @@ Our team is composed by some 4^Arob students:
 - [x] Obstacle
 - [x] openpose
 
+>Flappy Rick
+![Image of Pong](https://github.com/Bugis0ft/Compiti-In-Movimento/blob/master/Flappy_Bird/Flappy_Rick.PNG)
+
+- [x] Base object
+- [x] Obstacle
+- [x] OpenPose implementation
+- [x] Collision
+- [x] Points Managment
+- [x] Sound
 
 ## Thanks
 Thanks to:
