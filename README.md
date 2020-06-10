@@ -30,8 +30,8 @@ Our team is composed by some 4^Arob students:
 - [x] Ship & Shooting
 - [x] Music
 - [x] OpenPose implementation
-- [ ] Collision
-- [ ] Points Managment
+- [x] Collision
+- [x] Points Managment
 
 >Pong
 ![Image of Pong](https://github.com/Bugis0ft/Compiti-In-Movimento/blob/master/Ping_pong/documentation/game.jpg)
