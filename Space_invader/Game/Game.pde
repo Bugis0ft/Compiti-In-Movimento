@@ -4,17 +4,22 @@ import processing.sound.*;
 import java.net.*;
 import java.io.*;
 
+//score
 PFont font_scoreboard;
 static Points score;
 
+//game objects
 Galaxy stars;
 AlienAttack aliens;
 Ship ship;
+AsteroidsRain heavyRain;
+
+//sound files
 SoundFile pew;
 SoundFile music;
 SoundFile gameover;
-AsteroidsRain heavyRain;
 
+//timing and counting variables
 static boolean dead = false;
 static int killed = 0;
 int s = 0;
@@ -22,13 +27,12 @@ int s2 = 0;
 int startDelay = 0;
 int soundDelay = 429;
 
+//socket data
 DatagramSocket socket;
 DatagramPacket packet;
-
 static float nose_x;
 float diam = 40;
 float rectSize = 200;
-
 byte[] buf = new byte[24]; //Set your buffer size as desired
 
 void setup(){
@@ -42,6 +46,7 @@ void setup(){
   }
   size(displayWidth,displayHeight);
   noCursor();
+  
   //music settings
   music = new SoundFile(this, "sounds/megalovania.mp3");
   gameover = new SoundFile(this,"sounds/error.wav");
@@ -60,7 +65,6 @@ void setup(){
   
   //font
   font_scoreboard = createFont("font/punteggio.ttf", 80);
-  
   score = new Points();
 }
 
@@ -97,7 +101,7 @@ void draw(){
       checkCollision();
     }
     
-    //play pew sounf syncronized with ship shooting
+    //play pew sound syncronized with ship shooting
     if(startDelay == soundDelay){
       startDelay = 400;
       pew.play();
@@ -108,10 +112,13 @@ void draw(){
     textFont(font_scoreboard);
     fill(255,255,255);
     score.show(width/2-(200),200);
+    
   }else{
+    //game over
     music.stop();
     fill(255,0,0);
     text("GAME OVER",width/2-200,height/2);
+    
   }
   
 }
@@ -119,6 +126,7 @@ void draw(){
 void checkCollision(){
   s+=1;
   
+  //getting game objects
   Vector<Alien> enemies = aliens.getAliens();
   Vector<LaserTag> tags = ship.getTags();
   Vector<LaserTag> alienTags;

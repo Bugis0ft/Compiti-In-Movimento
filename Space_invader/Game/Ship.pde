@@ -11,15 +11,15 @@ class Ship{
     this.y = height-190;
     laserTag = new Vector<LaserTag>();
     s = 0;
-
   }
   
   public void show(){
     image(ship,-(nose_x-1500),y);
-    //fill(0,0,0,0);
-    //stroke(255,255,255);
+    fill(0,0,0,0);
+    stroke(255,255,255);
     //rect(-(nose_x-1500),780+ship.height/2, ship.width, ship.height/2);  //wings
     //rect(-(nose_x-1500)+65,780,ship.width-130,ship.height);  //main ship
+    
     //create a laser tag every second 
     s+=1;
     if(s%29 == 0){

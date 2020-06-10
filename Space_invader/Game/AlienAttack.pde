@@ -53,6 +53,11 @@ class AlienAttack{
         aliens.add(new Alien(2));
         aliens.add(new Alien(2));
         break;
+      case 11:
+        aliens.add(new Alien(3));
+        aliens.add(new Alien(3));
+        aliens.add(new Alien(3));
+        
       default:
         break;
     }
