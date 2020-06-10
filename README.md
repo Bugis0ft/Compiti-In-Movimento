@@ -39,9 +39,9 @@ Our team is composed by some 4^Arob students:
 - [x] Base object
 - [x] Points and writings
 - [x] Keyboard movements
-- [ ] Sound
-- [ ] Obstacle
-- [ ] Python cv
+- [x] Sound
+- [x] Obstacle
+- [x] openpose
 
 
 ## Thanks
