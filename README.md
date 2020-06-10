@@ -34,7 +34,7 @@ Our team is composed by some 4^Arob students:
 - [x] Points Managment
 
 >Pong
-![Image of Pong](https://github.com/Bugis0ft/Compiti-In-Movimento/blob/master/Ping_pong/documentation/demo.png)
+![Image of Pong](Ping_pong_processing/documentation/demo.png)
 
 - [x] Base object
 - [x] Points and writings
