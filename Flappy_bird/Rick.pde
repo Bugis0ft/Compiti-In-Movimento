@@ -11,7 +11,7 @@ class Rick{
   public void show(){
     image(rick,x,nose_y,100,150);
     fill(255,0,0);
-    circle(150,nose_y,10);
+    //circle(150,nose_y,10);
   }
   
   public float getX(){

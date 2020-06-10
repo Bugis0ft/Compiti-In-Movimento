@@ -27,7 +27,7 @@ class Base{
     image(base, x, y);
     image(base2, x,y+base.height+200);
     fill(255,0,0);
-    circle(x,y+base.height+200,10);
+    //circle(x,y+base.height+200,10);
   }
   
    public float getX(){
