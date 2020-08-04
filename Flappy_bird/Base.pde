@@ -4,7 +4,7 @@ class Base{
   private float x;
   private float y;
   private float speed;
-  private static final float MAX_SPEED = 10;
+  private static final float MAX_SPEED = 15;
 
   
   public Base(float x){
